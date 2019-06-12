@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TopNav from '../../components/TopNav'
 import Hero from '../../components/Hero'
+import NoArticles from '../../components/NoArticles'
 
 class Home extends Component {
     render() {
@@ -8,6 +9,7 @@ class Home extends Component {
             <>
             <TopNav />
             <Hero />
+            <NoArticles />
             </>
         )
     }
