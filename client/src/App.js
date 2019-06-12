@@ -1,11 +1,18 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import TopNav from './components/TopNav'
+import Home from './pages/Home'
 
-function App() {
-  return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
-  );
-}
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Route exact path="/" component={Home} />
+        </div>
+      </Router>
+    )
+  }
+}  
 
-export default App;
+export default App
