@@ -12,4 +12,4 @@
 // }
 // module.exports = sequelize
 
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://loclahost/news_db"
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://loclahost/news_db"

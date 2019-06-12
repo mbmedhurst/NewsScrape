@@ -1,3 +1,3 @@
 module.exports = app => {
-    require('./newsRoutes.js')(app)
+    require('./articleRoutes.js')(app)
 }

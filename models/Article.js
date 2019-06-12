@@ -9,5 +9,5 @@ const Article = new mongoose.Schema({
     comment: String
 })
 
-// name the model (News and pass the scheme I created (Article)
-module.exports = mongoose.model('News', Article)
+// name the model (News) and pass the schema I created (Article)
+module.exports = mongoose.model('Article', Article)
