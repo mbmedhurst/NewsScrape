@@ -1,3 +1,3 @@
 module.exports = {
-    News = require('./News.js')
+    Article = require('./Article.js')
 }

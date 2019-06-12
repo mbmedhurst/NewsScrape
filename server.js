@@ -7,11 +7,17 @@ app.use(express.static(join(__dirname, 'client', 'build')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-require('./routes')(app)
+const Article = require('./models/Article.js')
 
+Article.find({}, (e, docs) => {
+  console.log(docs)
+})
 
-// not sure about this if using mongoose instead of sequelize
-// {force: true}
-require('./config').sync()
-    .then(_ => app.listen(process.env.PORT || 3001))
-    .catch(e => console.log(e))
+// works only for localhost
+require('mongoose').connect('mongodb://localhost/news_db', { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: true })
+  .then(_ => app.listen(3001))
+  .catch(e => console.log(e))
+
+  // when deployed to heroku
+  // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://loclahost/news_db"
+  // mongoose.connect(MONGODB_URI)
