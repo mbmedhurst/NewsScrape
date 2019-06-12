@@ -5,6 +5,7 @@ const connection = require('../config')
 // can use javascript datatypes (String, Boolean, Integer)
 const Article = new mongoose.Schema({
     title: String,
+    summary: String,
     url: String,
     comment: String
 })

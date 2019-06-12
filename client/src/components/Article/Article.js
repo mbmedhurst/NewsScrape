@@ -1,30 +1,42 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(3, 2),
   },
-}));
+}))
 
-export default function Article() {
+export default function Article(title, summary) {
   const classes = useStyles();
 
   return (
     <div>
-      <Paper className={classes.root}>
-        <Typography variant="h5" component="h3">
-          This is a sheet of paper.
-        </Typography>
-        <Typography component="p">
-          Paper can be used to build surface or other elements for your application.
-        </Typography>
+      <Paper id='article' style={{ marginTop: '20px', marginLeft: '5%', marginRight: '5%', backgroundColor: '#804c4c', color: 'white' }} className={classes.root}>
+        <Grid container spacing={3}>
+          <Grid item xs={10}>
+            <Typography id='title' variant="h5" component="h3">
+              Title
+            </Typography>
+            <Typography id='summary' component="p">
+              Summary
+            </Typography>
+          </Grid>
+          <Grid item xs={2} style={{margin: 'auto', textAlign: 'center'}}>
+            <Button id='saveArticle' style={{backgroundColor: '#4b807e', color: 'white'}}>
+              Save Article
+            </Button>
+          </Grid>
+        </Grid>
       </Paper>
     </div>
-  );
+  )
 }
 
 
-// #4c8080
+
+
