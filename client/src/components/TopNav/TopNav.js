@@ -11,9 +11,6 @@ const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
     },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
     title: {
         flexGrow: 1,
     },
@@ -24,12 +21,14 @@ export default function TopNav() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{backgroundColor: 'darkBlue'}}>
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h5" className={classes.title} style={{flexGrow: '0.05'}}>
             Mongo Scraper
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button style={{marginLeft: '15px'}} color="inherit">Home</Button>
+          <Button style={{marginLeft: '15px'}} color="inherit">Saved Articles</Button>
+          <Button style={{marginLeft: '15px', backgroundColor: 'red'}} color="inherit">Scrape New Articles</Button>
         </Toolbar>
       </AppBar>
     </div>
