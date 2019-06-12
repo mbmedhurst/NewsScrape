@@ -7,10 +7,10 @@
     background-size: cover;
     position: relative;
     border-radius: 1px;
-    -webkit-border-radius: 1px  ;
-    -moz-border-radius: 1px  ;
-    -ms-border-radius: 1px  ;
-    -o-border-radius: 1px  ;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
 }
   
   /* Place text in the middle of the image */
