@@ -17,10 +17,9 @@ const useStyles = makeStyles(theme => ({
     return (
       <div>
         <Paper id='heroImage' className={classes.root} elevation='2'>
-          <Typography id='heroText' variant="h2" component="h3">
+          <Typography id='heroText1' variant="h2" component="h3">
               Mongo Scraper
-          </Typography>
-          <Typography component="p">
+              <p id='subHero' style={{fontSize: '25px'}}>Washington Post Edition</p>
           </Typography>
         </Paper>
       </div>
