@@ -19,14 +19,14 @@ export default function TopNav() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{backgroundColor: '#997a7a'}}>
+      <AppBar position="static" style={{backgroundColor: '#749393'}}>
         <Toolbar>
           <Typography variant="h5" className={classes.title} style={{flexGrow: '0.05'}}>
             Mongo Scraper
           </Typography>
           <Button style={{marginLeft: '15px'}} color="inherit">Home</Button>
           <Button style={{marginLeft: '15px'}} color="inherit">Saved Articles</Button>
-          <Button style={{marginLeft: '15px', backgroundColor: '#804c4c'}} color="inherit">Scrape New Articles</Button>
+          <Button style={{marginLeft: '15px', backgroundColor: '#487a7a'}} color="inherit">Scrape New Articles</Button>
         </Toolbar>
       </AppBar>
     </div>

@@ -16,7 +16,7 @@ export default function Article(title, summary) {
 
   return (
     <div>
-      <Paper id='article' style={{ marginTop: '20px', marginLeft: '5%', marginRight: '5%', backgroundColor: '#804c4c', color: 'white' }} className={classes.root}>
+      <Paper id='article' style={{ marginTop: '20px', marginLeft: '5%', marginRight: '5%', backgroundColor: '#749393', color: 'white' }} className={classes.root}>
         <Grid container spacing={3}>
           <Grid item xs={10}>
             <Typography id='title' variant="h5" component="h3">
@@ -26,8 +26,8 @@ export default function Article(title, summary) {
               Summary
             </Typography>
           </Grid>
-          <Grid item xs={2} style={{margin: 'auto', textAlign: 'center'}}>
-            <Button id='saveArticle' style={{backgroundColor: '#4b807e', color: 'white'}}>
+          <Grid item xs={2} style={{ margin: 'auto', textAlign: 'center' }}>
+            <Button id='saveArticle' style={{ backgroundColor: '#4b807e', color: 'white' }}>
               Save Article
             </Button>
           </Grid>
