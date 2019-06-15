@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const Article = {
     // GET articles from Washington Post
-    getNew = _ => {
+    getNew: _ => {
         axios.get('https://washingtonpost.com')
             .then(({ data }) => {
                 const $ = require('cheerio').load(data)

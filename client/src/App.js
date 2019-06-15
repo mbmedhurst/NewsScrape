@@ -2,8 +2,9 @@
 import React, { Component } from 'react'
 import TopNav from './components/TopNav'
 import Hero from './components/Hero'
-// import NoArticles from '../../components/NoArticles'
-import Article from './components/Article'
+// import NoArticles from './components/NoArticles'
+import ArtComp from './components/ArtComp'
+import Article from './components/Utils/articles.js'
 
 
 
@@ -28,25 +29,52 @@ class App extends Component {
     title: '',
     summary: '',
     url: '',
-    comments: '' 
+    comments: '',
+    savedArts: [],
+    wapoArr: [],
+    haveNew: false
   }
 
   handleGetArticles = event => {
     console.log('Here I am!')
     Article.getNew()
+      .then(({ data }) => {
+        this.setState({ wapoArr: data })
+      })
+  }
+
+  handleSaveArticle = event => {
+    console.log("Here I am!")
+    let savedArts = this.state.savedArts
+    let newArt = {
+      title: 'Headline',
+      summary: 'This is a short summary of my article',
+      url: 'http://washingtonpost.com',
+      comment: ''
+    }
+    Article.postOne(newArt)
+    this.state.savedArts.push(newArt)
+    this.setState({ ...newArt })
+    console.log(newArt)
+    console.log(savedArts)
   }
 
   render() {
-  
+
     return (
       <>
-            <TopNav />
-            <Hero />
-            {/* <NoArticles /> */}
-            {/* <Article /> */}
+        <TopNav />
+        <Hero />
+        {/* <NoArticles /> */}
+        <ArtComp
+          title={this.state.title}
+          summary={this.state.summary}
+          url={this.state.url}
+          handleSaveArticle={this.handleSaveArticle}
+        />
       </>
     )
   }
-}  
+}
 
 export default App

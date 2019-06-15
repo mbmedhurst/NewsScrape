@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-export default function TopNav() {
+export default function TopNav(handleGetArticles, title, summary, url) {
   const classes = useStyles();
 
   return (
@@ -26,7 +26,7 @@ export default function TopNav() {
           </Typography>
           <Button style={{marginLeft: '15px'}} color="inherit">Home</Button>
           <Button style={{marginLeft: '15px'}} color="inherit">Saved Articles</Button>
-          <Button style={{marginLeft: '15px', backgroundColor: '#487a7a'}} color="inherit">Scrape New Articles</Button>
+          <Button style={{marginLeft: '15px', backgroundColor: '#487a7a'}} color="inherit" onClick={() => handleGetArticles({title, summary, url})}>Scrape New Articles</Button>
         </Toolbar>
       </AppBar>
     </div>
