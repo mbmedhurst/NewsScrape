@@ -3,15 +3,18 @@ const express = require('express')
 const { join } = require('path')
 const app = express()
 
+
 app.use(express.static(join(__dirname, 'client', 'build')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-const Article = require('./models/Article.js')
+require('./routes')(app)
 
-Article.find({}, (e, docs) => {
-  console.log(docs)
-})
+// const Article = require('./models/Article.js')
+
+// Article.find({}, (e, docs) => {
+//   console.log(docs)
+// })
 
 // works only for localhost
 require('mongoose').connect('mongodb://localhost/news_db', { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: true })
