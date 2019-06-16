@@ -1,11 +1,13 @@
-import axios from 'axios'
+import Axios from 'axios'
+
 
 const Article = {
     // GET articles from Washington Post
     getNew: _ => {
-        axios.get('https://washingtonpost.com')
-            .then(({ data }) => {
-                const $ = require('cheerio').load(data)
+        return Axios.get('https://washingtonpost.com')
+        console.log('here i am')
+            .then(r => {
+                const $ = require('cheerio').load(r)
                 const wapoArr = []
                 $('div.no-skin').each((i, elem) => {
                     wapoArr.push({
@@ -18,17 +20,18 @@ const Article = {
             .catch(e => console.log(e))
     },
 
+
     // GET all saved articles from the db
-    getAll: _ => axios.get('/articles'),
+    getAll: _ => Axios.get('/articles'),
 
     // SAVE one article to the db
-    postOne: Article => axios.post(`/articles`, Article),
+    postOne: Article => Axios.post(`/articles`, Article),
 
     // Add a comment to a saved article
-    putOne: (_id, Article) => axios.put(`/articles/${_id}`, Article),
+    putOne: (_id, Article) => Axios.put(`/articles/${_id}`, Article),
 
     // DELETE a saved article from the db
-    deleteOne: _id => axios.delete(`/articles/${_id}`),
+    deleteOne: _id => Axios.delete(`/articles/${_id}`),
 }
 
 export default Article

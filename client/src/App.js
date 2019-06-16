@@ -5,6 +5,8 @@ import Hero from './components/Hero'
 // import NoArticles from './components/NoArticles'
 import ArtComp from './components/ArtComp'
 import Article from './components/Utils/articles.js'
+// import Axios from 'axios';
+
 
 
 
@@ -35,11 +37,10 @@ class App extends Component {
     haveNew: false
   }
 
-  handleGetArticles = event => {
-    console.log('Here I am!')
+  componentDidMount() {
     Article.getNew()
-      .then(({ data }) => {
-        this.setState({ wapoArr: data })
+      .then(r => {
+        this.setState({ wapoArr: r})
       })
   }
 
@@ -59,6 +60,13 @@ class App extends Component {
     console.log(savedArts)
   }
 
+  // handleAddComment = event => {
+  //   console.log('Here I am!')
+  //   Article.putOne(_id, Article)
+  //   this.setState({...newArt._id})
+  //   console.log(newArt._id)
+  // }
+
   render() {
 
     return (
@@ -70,6 +78,7 @@ class App extends Component {
           title={this.state.title}
           summary={this.state.summary}
           url={this.state.url}
+          componentDidMount={this.componentDidMount}
           handleSaveArticle={this.handleSaveArticle}
         />
       </>
