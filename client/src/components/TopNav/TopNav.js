@@ -24,8 +24,8 @@ export default function TopNav(handleGetArticles, title, summary, url) {
           <Typography variant="h5" className={classes.title} style={{flexGrow: '0.05'}}>
             Mongo Scraper
           </Typography>
-          <Button style={{marginLeft: '15px'}} color="inherit">Home</Button>
-          <Button style={{marginLeft: '15px'}} color="inherit">Saved Articles</Button>
+          <Button style={{marginLeft: '15px'}} color="inherit" href='./'>Home</Button>
+          <Button style={{marginLeft: '15px'}} color="inherit" href='/Saved'>Saved Articles</Button>
           <Button style={{marginLeft: '15px', backgroundColor: '#487a7a'}} color="inherit">Scrape New Articles</Button>
         </Toolbar>
       </AppBar>

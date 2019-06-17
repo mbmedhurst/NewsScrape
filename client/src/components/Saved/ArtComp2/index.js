@@ -1,0 +1,1 @@
+export {default} from './ArtComp2.js'
