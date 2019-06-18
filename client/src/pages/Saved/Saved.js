@@ -8,6 +8,7 @@ import Article from '../../components/Utils/articles.js'
 
 class Saved extends Component {
   state = {
+    _id: '',
     title: '',
     summary: '',
     url: '',
@@ -25,7 +26,7 @@ class Saved extends Component {
       .then(({ data }) => {
         savedArts.push(data)
         this.setState({ savedArts: data })
-        // console.log(savedArts)
+        console.log(savedArts)
       })
   }
 
@@ -37,10 +38,15 @@ class Saved extends Component {
   //   console.log(newArt._id)
   // }
 
-  // handleDeleteArticle = event => {
-  //   console.log('Here I am!')
-  //   Article.deleteOne(_id)
-  // }
+  // this is working!
+  handleDeleteArticle = (_id) => {
+    Article.deleteOne(_id)
+      .then(({data}) => {
+        this.setState({
+          savedArts: this.state.savedArts.filter(art => art._id !== _id)
+        })
+      })
+}
 
   render() {
 
@@ -54,6 +60,7 @@ class Saved extends Component {
           summary={this.state.summary}
           url={this.state.url}
           componentDidMount={this.componentDidMount}
+          handleDeleteArticle={this.handleDeleteArticle}
         />
       </>
     )

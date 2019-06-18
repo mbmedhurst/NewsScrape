@@ -30,6 +30,7 @@ const Article = {
     },
 
     // GET all saved articles from the db
+    // this is working!
     getAll: _ => Axios.get('/articles'),
 
     // SAVE one article to the db
@@ -39,6 +40,7 @@ const Article = {
     putOne: (_id, Article) => Axios.put(`/articles/${_id}`, Article),
 
     // DELETE a saved article from the db
+    // this is working!
     deleteOne: _id => Axios.delete(`/articles/${_id}`),
 }
 
