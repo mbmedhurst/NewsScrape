@@ -16,8 +16,7 @@ const useStyles = makeStyles(theme => ({
 export default function ArtComp({ wapoArr = [], title, summary, url, handleSaveArticle }) {
   const classes = useStyles()
   return (
-    wapoArr.map(({ title, summary, url }) => {
-      return <Paper id='article' style={{ marginTop: '20px', marginLeft: '5%', marginRight: '5%', backgroundColor: '#749393', color: 'white' }} className={classes.root}>
+      <Paper id='article' style={{ marginTop: '20px', marginLeft: '5%', marginRight: '5%', backgroundColor: '#749393', color: 'white' }} className={classes.root}>
         <Grid container spacing={3}>
           <Grid item xs={10}>
             <Typography id='title' variant="h5" component="h3">
@@ -36,6 +35,5 @@ export default function ArtComp({ wapoArr = [], title, summary, url, handleSaveA
           </Grid>
         </Grid>
       </Paper>
-    })
-  )
+    )
 }

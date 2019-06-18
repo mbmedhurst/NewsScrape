@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 
-export default function ArtComp2({ savedArts = [], newArt, title, summary, url, comment, componentDidMount }) {
+export default function ArtComp2({ savedArts, title, summary, url, comment, componentDidMount }) {
   const classes = useStyles()
   return (
     savedArts.map(({ title, summary, url }) => {

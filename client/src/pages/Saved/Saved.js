@@ -17,10 +17,15 @@ class Saved extends Component {
     haveNew: false
   }
 
-  componentDidlMount() {
+  // this is working!
+  componentDidMount() {
+    // console.log('hello marianna')
+    let savedArts = []
     Article.getAll()
       .then(({ data }) => {
-        this.setState({ occList: data })
+        savedArts.push(data)
+        this.setState({ savedArts: data })
+        // console.log(savedArts)
       })
   }
 
@@ -44,6 +49,7 @@ class Saved extends Component {
         <Hero2 />
         {/* <NoArticles /> */}
         <ArtComp2
+          savedArts={this.state.savedArts}
           title={this.state.title}
           summary={this.state.summary}
           url={this.state.url}

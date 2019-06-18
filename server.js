@@ -26,3 +26,5 @@ require('mongoose').connect('mongodb://localhost/news_db', { useNewUrlParser: tr
   // when deployed to heroku
   // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://loclahost/news_db"
   // mongoose.connect(MONGODB_URI)
+
+

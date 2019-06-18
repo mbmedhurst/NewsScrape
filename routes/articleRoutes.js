@@ -1,5 +1,5 @@
-// could use 'db' if more than the News model was required
 const Article = require('../models/Article.js')
+
 
 
 module.exports = app => {
@@ -19,4 +19,7 @@ module.exports = app => {
     // this is working!
     app.delete('/articles/:_id', (req, res) => Article.remove({ _id: req.params._id }, e => e ? console.log(e) : res.sendStatus(200)))
 
+    // GET articles from WaPo
+    app.get('/seed', (req, res) => Article.find((e, docs) => e ? console.log(e) : res.sendStatus(200)))        
+        
 }
