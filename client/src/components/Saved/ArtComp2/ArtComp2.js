@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import Comment from '../Comment'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,7 +21,7 @@ export default function ArtComp2({ _id, savedArts, title, summary, url, comment,
         <Grid container spacing={3}>
           <Grid item xs={7}>
             <Typography id='title' variant="h5" component="h3">
-              <a href={url} target="_blank" rel="noopener noreferrer">
+              <a href={url} target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>
                 {title}
               </a>
             </Typography>
@@ -29,9 +30,10 @@ export default function ArtComp2({ _id, savedArts, title, summary, url, comment,
             </Typography>
           </Grid>
           <Grid item xs={5} style={{ margin: 'auto', textAlign: 'right' }}>
-            <Button id='saveArticle' style={{ backgroundColor: '#80724b', color: 'white' }}>
+            <Comment />
+            {/* <Button id='saveArticle' style={{ backgroundColor: '#80724b', color: 'white' }}>
               Article Notes
-            </Button>
+            </Button> */}
             <Button id='deleteArticle' style={{ marginLeft: '15px', backgroundColor: '#837493', color: 'white' }} onClick={() => handleDeleteArticle(_id)}>
               Delete From Saved
             </Button>
