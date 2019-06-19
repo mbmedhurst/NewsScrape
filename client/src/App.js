@@ -11,7 +11,9 @@ class App extends Component {
     return (
       <Router>
         <div>
-        <TopNav />
+        <TopNav
+        handleGetArticles={this.handleGetArticles}
+        />
         <Route exact path='/' component={Home} />
         <Route exact path='/Saved' component={Saved} />
         {/* <NoArticles /> */}

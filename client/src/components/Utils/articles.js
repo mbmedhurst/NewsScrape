@@ -5,12 +5,30 @@ const Article = {
     // GET articles from Washington Post
     getNew: _ => {
         console.log('so far so good')
-        return fetch('https://washingtonpost.com')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
+        var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+            targetUrl = 'https://washingtonpost.com'
+        return fetch(proxyUrl + targetUrl)
+            .then(res => res.text())
+            .then(({ data }) => {
+                const $ = require('cheerio').load({data})
+                const wapoArr = []
+                $('div.no-skin').each((i, elem) => {
+                    wapoArr.push({
+                        title: $(elem).children('.headline').text(),
+                        summary: $(elem).children('.blurb').text(),
+                        url: $(elem).children('.headline').children('a').attr('href'),
+                    })
+                })
+            }
+            )
+            .catch(e => console.log(e))
+
+        // return fetch('https://washingtonpost.com')
+        //     .then(res => res.json())
         //     .then(data => {
+        //         console.log(data)
+        //     })
+        // //     .then(data => {
         //         console.log('here is some data: ', data)
         //         return data
         //     })

@@ -16,12 +16,12 @@ class Home extends Component {
     haveNew: false
   }
 
-  componentDidMount() {
-    Article.getNew()
-    // .then(({ data }) => {
-    //     this.setState({ wapoArr: data})
-    //   })
-  }
+  // handleGetArticles = event => {
+  //   Article.getNew()
+  //   .then(({ data }) => {
+  //       this.setState({ wapoArr: data})
+  //     })
+  // }
 
   // this is working!
   handleSaveArticle = event => {
@@ -51,7 +51,7 @@ class Home extends Component {
           title={this.state.title}
           summary={this.state.summary}
           url={this.state.url}
-          // componentDidMount={this.componentDidMount}
+          handleGetArticles={this.handleGetArticles}
           handleSaveArticle={this.handleSaveArticle}
         />
       </>

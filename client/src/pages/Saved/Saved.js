@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Hero2 from '../../components/Saved/Hero2'
 // import NoArticles from './components/NoArticles'
 import ArtComp2 from '../../components/Saved/ArtComp2'
+import Comment from '../../components/Saved/Comment'
 import Article from '../../components/Utils/articles.js'
 // import Axios from 'axios';
 
@@ -30,16 +31,15 @@ class Saved extends Component {
       })
   }
 
-
-  // handleAddComment = event => {
-  //   console.log('Here I am!')
-  //   Article.putOne(_id, Article)
-  //   this.setState({...newArt._id})
-  //   console.log(newArt._id)
-  // }
+  handleAddComment = event => {
+    console.log('Here I am!')
+    // Article.putOne(_id, Article)
+    // this.setState({...newArt._id})
+    // console.log(newArt._id)
+  }
 
   // this is working!
-  handleDeleteArticle = (_id) => {
+  handleDeleteArticle = (event, _id) => {
     Article.deleteOne(_id)
       .then(({data}) => {
         this.setState({
@@ -60,6 +60,7 @@ class Saved extends Component {
           summary={this.state.summary}
           url={this.state.url}
           componentDidMount={this.componentDidMount}
+          handleAddComment={this.handleAddComment}
           handleDeleteArticle={this.handleDeleteArticle}
         />
       </>

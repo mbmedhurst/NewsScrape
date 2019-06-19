@@ -12,10 +12,10 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-
-export default function ArtComp2({ _id, savedArts, title, summary, url, comment, componentDidMount, handleDeleteArticle }) {
+export default function ArtComp2({ _id, savedArts, title, summary, url, comment, componentDidMount, handleDeleteArticle, handleAddComment }) {
   const classes = useStyles()
-  return (
+
+   return (
     savedArts.map(({ _id, title, summary, url }) => {
       return <Paper id='article' style={{ marginTop: '20px', marginLeft: '5%', marginRight: '5%', backgroundColor: '#749393', color: 'white' }} className={classes.root}>
         <Grid container spacing={3}>
@@ -30,11 +30,13 @@ export default function ArtComp2({ _id, savedArts, title, summary, url, comment,
             </Typography>
           </Grid>
           <Grid item xs={5} style={{ margin: 'auto', textAlign: 'right' }}>
-            <Comment />
-            {/* <Button id='saveArticle' style={{ backgroundColor: '#80724b', color: 'white' }}>
-              Article Notes
-            </Button> */}
-            <Button id='deleteArticle' style={{ marginLeft: '15px', backgroundColor: '#837493', color: 'white' }} onClick={() => handleDeleteArticle(_id)}>
+            <Comment 
+            />
+            <Button 
+              id='deleteArticle' 
+              style={{ marginLeft: '15px', backgroundColor: '#837493', color: 'white' }} 
+              onClick={() => handleDeleteArticle()}
+              >
               Delete From Saved
             </Button>
           </Grid>
