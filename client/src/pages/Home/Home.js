@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Hero from '../../components/Home/Hero'
-// import NoArticles from './components/NoArticles'
+import NoArticles from '../../components/Home/NoArticles'
 import ArtComp from '../../components/Home/ArtComp'
 import Article from '../../components/Utils/articles.js'
 // import Axios from 'axios';
@@ -15,13 +15,6 @@ class Home extends Component {
     wapoArr: [],
     haveNew: false
   }
-
-  // handleGetArticles = event => {
-  //   Article.getNew()
-  //   .then(({ data }) => {
-  //       this.setState({ wapoArr: data})
-  //     })
-  // }
 
   // this is working!
   handleSaveArticle = event => {
@@ -45,7 +38,7 @@ class Home extends Component {
     return (
       <>
         <Hero />
-        {/* <NoArticles /> */}
+        <NoArticles />
         <ArtComp
           wapoArr={this.state.wapoArr}
           title={this.state.title}

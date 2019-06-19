@@ -22,10 +22,10 @@ export default function TopNav(handleGetArticles, title, summary, url) {
 
   handleGetArticles = event => {
     Article.getNew()
-    console.log('done')
-    // .then(({ data }) => {
-    //     this.setState({ wapoArr: data})
-    //   })
+    // this throws an error because there is no data returned from the fetch request
+    .then(({ data }) => {
+        this.setState({ wapoArr: data})
+      })
   }
 
   return (
