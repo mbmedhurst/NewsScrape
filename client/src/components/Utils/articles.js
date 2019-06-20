@@ -38,7 +38,8 @@ const Article = {
 
     // DELETE a saved article from the db
     // this is working!
-    deleteOne: _id => Axios.delete(`/articles/${_id}`),
+    
+    deleteOne: _id => Axios.delete(`/articles/${_id}`)
 }
 
 export default Article

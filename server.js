@@ -19,7 +19,7 @@ require('./routes')(app)
 // })
 
 // works only for localhost
-require('mongoose').connect('mongodb://mbm:vMbqx67CmRi35JB.mlab.com:41097/heroku_d68dnngq', { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: true })
+require('mongoose').connect('mongodb://localhost/news_db', { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: true })
   .then(_ => app.listen(3001))
   .catch(e => console.log(e))
 
